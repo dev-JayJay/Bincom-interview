@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polling unit</title>
+    <link rel="stylesheet" href="/styles/PollingUnit.css">
+</head>
+<body>
+    <h1>Polling Units</h1>
+  <div>
+    <% pollingUnits.forEach((unit) => { %>
+      <div>
+        <h2><%= unit.polling_unit_name %></h2>
+        <p><strong>Polling Unit Number:</strong> <%= unit.polling_unit_number %></p>
+        <p><strong>Location:</strong> Latitude <%= unit.lat %>, Longitude <%= unit.long %></p>
+        <p><strong>Description:</strong> <%= unit.polling_unit_description || 'No description available' %></p>
+        <p><strong>Entered By:</strong> <%= unit.entered_by_user || 'N/A' %></p>
+        <p><strong>Date Entered:</strong> <%= unit.date_entered || 'N/A' %></p>
+        <p><strong>User IP Address:</strong> <%= unit.user_ip_address || 'N/A' %></p>
+      </div>
+      <hr />
+    <% }) %>
+  </div>
+</body>
+</html>

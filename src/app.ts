@@ -1,7 +1,21 @@
 import express, { Request, Response } from "express";
 import db from "./database/knex";
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
 const app = express();
 const PORT = process.env.post || 8000;
+
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+
 
 app.get("/", (req: Request, res: Response) => {
   console.log("Root route visited");
@@ -10,8 +24,9 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/check", async (req: Request, res: Response) => {
   try {
-    const check = await db("polling_unit").select("*");
-    res.json(check);
+    const pollingUnits = await db("polling_unit").select("*");
+    // res.json(check);
+    res.render('index', { pollingUnits });
   } catch (error) {
     res.status(500).json({ message: "Error fetching users" });
   }

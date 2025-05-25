@@ -1,0 +1,91 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* General Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Main Container Styling */
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  color: #4e73df;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Polling Unit Card Styling */
+.polling-unit {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.polling-unit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Polling Unit Title Styling */
+.polling-unit h2 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* Polling Unit Details Styling */
+.polling-unit p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+.polling-unit p strong {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Horizontal Divider Styling */
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .polling-unit h2 {
+    font-size: 1.1rem;
+  }
+}
