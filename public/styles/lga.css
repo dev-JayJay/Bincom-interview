@@ -1,24 +1,26 @@
-/* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* General Reset and Body Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   background-color: #f4f7fc;
   color: #333;
   line-height: 1.6;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
 }
+
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +49,6 @@ body {
   background-color: #4e73df;
   color: white;
 }
-
 .container {
   background-color: #fff;
   border-radius: 8px;
@@ -71,11 +72,6 @@ h1 {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.polling-unit:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .polling-unit h2 {
@@ -88,9 +84,27 @@ h1 {
   margin: 5px 0;
   font-size: 0.95rem;
 }
+
 .polling-unit p strong {
   font-weight: 600;
   color: #555;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.result {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.result p {
+  margin: 5px 0;
+  font-size: 0.95rem;
 }
 
 hr {
@@ -103,9 +117,11 @@ hr {
   .container {
     padding: 15px;
   }
+
   h1 {
     font-size: 1.5rem;
   }
+
   .polling-unit h2 {
     font-size: 1.1rem;
   }

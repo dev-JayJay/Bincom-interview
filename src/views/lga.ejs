@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Goverment Areas</title>
+  <link rel="stylesheet" href="/styles/lga.css" />
+</head>
+
+<body>
+  <div class="nav-container">
+    <p><a href="/">Answer 1</a></p>
+    <p><a href="/lga-result">Answer 2</a></p>
+    <p><a href="/new-party-score">Answer 3</a></p>
+  </div>
+  <div class="container">
+    <h1>Local Goverment Areas</h1>
+    <% lga_results.forEach(result=> { %>
+      <div class="container">
+        <div class="polling-unit">
+          <h2>
+            <%= result.lga_name %>
+          </h2>
+          <p>
+            <strong>LGA Name:</strong>
+            <%= result.lga_name %>
+          </p>
+          <p>
+            <strong>LGA Description:</strong>
+            <%= result.lga_description %>
+          </p>
+          <p>
+            <strong>Entered By:</strong>
+            <%= result.entered_by_user || 'N/A' %>
+          </p>
+          <p>
+            <strong>Date Entered:</strong>
+            <%= result.date_entered || 'N/A' %>
+          </p>
+          <p>
+            <strong>LGA IP Addreaa:</strong>
+            <%= result.user_ip_address || 'N/A' %>
+          </p>
+        </div>
+        <h3>
+          <%= result.lga_name %> Polling Units
+        </h3>
+        <lable>
+          <input type="checkbox" id="show_polling_units_<%= result.lga_name %>" />
+          Show Polling Unit
+        </lable>
+        <div class="results" id="results">
+          <% result.polling_unit.forEach(unit=> { %>
+            <div class="result">
+              <p>
+                <strong>Polling Name:</strong>
+                <%= unit.polling_unit_name %>
+              </p>
+              <p>
+                <strong>Polling Unit Number:</strong>
+                <%= unit.polling_unit_number %>
+              </p>
+              <p>
+                <strong>Location:</strong> Latitude <%= unit.lat %>, Longitude <%= unit.long %>
+              </p>
+              <p>
+                <strong>Entered By:</strong>
+                <%= unit.entered_by_user || 'N/A' %>
+              </p>
+              <p>
+                <strong>Date Entered:</strong>
+                <%= unit.date_entered || 'N/A' %>
+              </p>
+              <p>
+                <strong>User IP Address:</strong>
+                <%= unit.user_ip_address || 'N/A' %>
+              </p>
+            </div>
+            <% }) %>
+              <h3 style="color: red">
+                Total Number Of Polling Units in <%= result.lga_name %> is = <%= result.polling_unit ?
+                    result.polling_unit.length : 0 %>
+              </h3>
+        </div>
+      </div>
+      <% }) %>
+</body>
+
+</html>
+<script>
+  const toggle = document.getElementById("show_polling_units");
+  const results = document.getElementById("results");
+
+</script>
