@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Data Entry</title>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <p><a href="/">Answer 1</a></p>
+        <p><a href="/lga-result">Answer 2</a></p>
+        <p><a href="/new-party-score">Answer 3</a></p>
+    </div>
+    <h1>Polling Unit Data Entry</h1>
+
+    <form action="/new-party-score" method="POST">
+        <div class="polling-unit">
+            <h2>Polling Unit</h2>
+            <input type="text" name="polling_unit_uniqueid" required>
+        </div>
+
+        <div class="polling-unit">
+            <h2>Party</h2>
+            <input type="text" name="party_abbreviation" required>
+        </div>
+
+        <div class="polling-unit">
+            <h2>Party Score</h2>
+            <input type="number" name="party_score" required>
+        </div>
+
+        <div class="polling-unit">
+            <h2>Entered By User</h2>
+            <input type="text" name="entered_by_user" required>
+        </div>
+
+        <div class="polling-unit">
+            <h2>Date Entered</h2>
+            <input type="date" name="date_entered" required>
+        </div>
+
+        <div class="polling-unit">
+            <h2>IP Address</h2>
+            <input type="text" name="user_ip_address">
+        </div>
+
+        <button
+            style="text-align:center; padding:  10px 50px; background-color: #4e73df; color: #fff; border: none; border-radius: 10px;"
+            type="submit">Submit</button>
+    </form>
+    </div>
+
+</body>
+
+</html>

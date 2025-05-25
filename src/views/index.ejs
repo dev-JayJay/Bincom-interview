@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit</title>
+    <link rel="stylesheet" href="/styles/lga.css">
+</head>
+
+<body>
+    <div>
+        <p><a href="/">answer 1</a></p>
+        <p><a href="/lga-result">answer 2</a></p>
+        <p><a href="/new-party-score">answer 3</a></p>
+    </div>
+    <div class="container">
+        <div class="container">
+            <h1 style="text-transform: capitalize;">
+                <%= pollingUnitsResult[0].polling_unit_name %> Polling Unit Results
+            </h1>
+            <div class="polling-unit">
+                <h2>
+                    <%= pollingUnitsResult[0].polling_unit_name %>
+                </h2>
+                <p>
+                    <strong>Polling Unit Number:</strong>
+                    <%= pollingUnitsResult[0].polling_unit_number %>
+                </p>
+                <p>
+                    <strong>Location:</strong> Latitude <%= pollingUnitsResult[0].lat %>, Longitude
+                        <%= pollingUnitsResult[0].long %>
+                </p>
+                <p>
+                    <strong>Description:</strong>
+                    <%= pollingUnitsResult[0].polling_unit_description || 'No description available' %>
+                </p>
+                <p>
+                    <strong>Entered By:</strong>
+                    <%= pollingUnitsResult[0].entered_by_user || 'N/A' %>
+                </p>
+                <p>
+                    <strong>Date Entered:</strong>
+                    <%= pollingUnitsResult[0].date_entered || 'N/A' %>
+                </p>
+                <p>
+                    <strong>User IP Address:</strong>
+                    <%= pollingUnitsResult[0].user_ip_address || 'N/A' %>
+                </p>
+            </div>
+            <h3>Election Results</h3>
+            <div class="results">
+                <% pollingUnitsResult.forEach(result=> { %>
+                    <div class="result">
+                        <p><strong>Party:</strong>
+                            <%= result.party_abbreviation %>
+                        </p>
+                        <p><strong>Score:</strong>
+                            <%= result.party_score %>
+                        </p>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+</body>
+
+</html>
